@@ -1,0 +1,803 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="QiaoBHNhaokeai">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Spring学习中的笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring">
+<meta property="og:url" content="https://myblog-20.4everland.app/2023/07/04/Spring/index.html">
+<meta property="og:site_name" content="QiaoBHNhaokeai">
+<meta property="og:description" content="Spring学习中的笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629225033660.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629225007526.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629224911270.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132410644.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132330378.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132439934.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132459552.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630134317205.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630134407423.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630134527787.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230704113645539.png">
+<meta property="og:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230704113704623.png">
+<meta property="article:published_time" content="2023-07-04T14:57:58.000Z">
+<meta property="article:modified_time" content="2023-07-04T15:16:52.458Z">
+<meta property="article:author" content="QiaoBHNhaokeai">
+<meta property="article:tag" content="spring">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629225033660.png">
+  
+  
+  
+  <title>Spring - QiaoBHNhaokeai</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"myblog-20.4everland.app","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":21714033,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21714033.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>QiaoBHNhaokeai</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Spring"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-04 22:57" pubdate>
+          2023年7月4日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Spring</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h3 id="IoC-控制反转"><a href="#IoC-控制反转" class="headerlink" title="IoC 控制反转"></a>IoC 控制反转</h3><p>使用对象时，由主动new产生对象转换为由<strong>外部</strong>提供对象，对象创建控制权由程序转移到<strong>外部</strong>，称为控制反转。</p>
+<p>Spring提供了一个容器称为IoC容器，用来充当IoC思想中的“外部”。</p>
+<p>IoC容器负责对象的创建、初始化等一系列工作，被创建或被管理的对象在IoC容器中统称为<strong>Bean</strong>。</p>
+<p>就是把service 和 dao 放进IoC容器中。</p>
+<p>导入spring坐标：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-context<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.2.10.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>applicationContext.xml配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;bookDao&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;BookDaoImp&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;bookService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;BookServiceImp&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>获取IoC容器:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Application</span> <span class="hljs-variable">ctx</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;applicationContext.xml&quot;</span>);<br><span class="hljs-type">BookDao</span> <span class="hljs-variable">bookDao</span> <span class="hljs-operator">=</span> (BookDao) ctx.getBean(<span class="hljs-string">&quot;bookDao&quot;</span>);<br>bookDao.save();<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="DI-依赖注入"><a href="#DI-依赖注入" class="headerlink" title="DI 依赖注入"></a>DI 依赖注入</h3><ul>
+<li>使用IoC容器管理Bean（IoC）</li>
+<li>在IoC容器内将有依赖关系的bean进行关系绑定（DI）</li>
+</ul>
+<p>使用对象时不仅可以直接从IoC容器中获取，并且获取到的Bean已经绑定了所有的依赖关系。</p>
+<h3 id="Bean"><a href="#Bean" class="headerlink" title="Bean"></a>Bean</h3><h5 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h5><ul>
+<li><p>id：bean 的id 使用容器可以通过id值获取对应bean，id唯一。</p>
+</li>
+<li><p>class：bean的类型，即bean的全路径类名。</p>
+</li>
+</ul>
+<h5 id="bean的别名"><a href="#bean的别名" class="headerlink" title="bean的别名"></a>bean的别名</h5><p>可以使用空格、分号、逗号分隔。</p>
+<h5 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h5><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629225033660.png" srcset="/img/loading.gif" lazyload alt="image-20230629225033660"></p>
+<ul>
+<li>构造方法实例化</li>
+<li>使用静态工厂实例化 要用到factory-method 属性</li>
+<li>实例工厂（了解即可）</li>
+<li>FactoryBean实例化</li>
+<li><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629225007526.png" srcset="/img/loading.gif" lazyload alt="image-20230629225007526"><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629224911270.png" srcset="/img/loading.gif" lazyload alt="image-20230629224911270"  /></li>
+</ul>
+<p>applicationContext.xml 里的bean配置</p>
+<h5 id="生命周期控制"><a href="#生命周期控制" class="headerlink" title="生命周期控制"></a>生命周期控制</h5><ul>
+<li><p>在bean配置里init-method和destory-method</p>
+</li>
+<li><p>实现InitializingBean 和 DisposableBean两个接口中的 afterPropertiesSet方法和destory方法</p>
+</li>
+</ul>
+<h6 id="初始化容器"><a href="#初始化容器" class="headerlink" title="初始化容器"></a>初始化容器</h6><ol>
+<li>创建对象（内存分配）</li>
+<li>执行构造方法</li>
+<li>执行属性注入（set操作）</li>
+<li>执行bean初始化方法</li>
+</ol>
+<h6 id="使用bean"><a href="#使用bean" class="headerlink" title="使用bean"></a>使用bean</h6><ol>
+<li>执行业务操作</li>
+</ol>
+<h6 id="关闭-x2F-销毁容器"><a href="#关闭-x2F-销毁容器" class="headerlink" title="关闭&#x2F;销毁容器"></a>关闭&#x2F;销毁容器</h6><ol>
+<li>执行bean销毁方法</li>
+</ol>
+<p>——关于bean的销毁时机</p>
+<p>关闭容器的方式：</p>
+<ul>
+<li>手工关闭容器</li>
+<li>注册关闭钩子</li>
+</ul>
+<p>ConfigurableApplicationContext接口的close()操作</p>
+<p>ConfigurableApplicationContext接口registerShutdownHook()操作</p>
+<h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132410644.png" srcset="/img/loading.gif" lazyload alt="image-20230630132410644"></p>
+<p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132330378.png" srcset="/img/loading.gif" lazyload alt="image-20230630132330378"></p>
+<p>以上是引用</p>
+<p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132439934.png" srcset="/img/loading.gif" lazyload alt="image-20230630132439934"></p>
+<p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132459552.png" srcset="/img/loading.gif" lazyload alt="image-20230630132459552"></p>
+<p>基本类型</p>
+<p>构造方法</p>
+<p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630134317205.png" srcset="/img/loading.gif" lazyload alt="image-20230630134317205"></p>
+<p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630134407423.png" srcset="/img/loading.gif" lazyload alt="image-20230630134407423"></p>
+<p>构造方法 基本类型</p>
+<p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630134527787.png" srcset="/img/loading.gif" lazyload alt="image-20230630134527787"></p>
+<h6 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h6><p>bean标签里 加autowire属性</p>
+<p>byType 按类型 ：要求bean唯一</p>
+<p>byName 按名称 ： 必须有指定名称的bean，变量名耦合，不推荐</p>
+<p>自动装配优先级最低</p>
+<h3 id="注解开发"><a href="#注解开发" class="headerlink" title="注解开发"></a>注解开发</h3><h5 id="bean-注解-component"><a href="#bean-注解-component" class="headerlink" title="bean 注解 @component"></a>bean 注解 @component</h5><ul>
+<li><strong>@Controller</strong></li>
+<li><strong>@Service</strong> service</li>
+<li><strong>@Repository</strong> dao</li>
+</ul>
+<h5 id="java类代替核心配置文件（ApplicationContext）"><a href="#java类代替核心配置文件（ApplicationContext）" class="headerlink" title="java类代替核心配置文件（ApplicationContext）"></a>java类代替核心配置文件（ApplicationContext）</h5><p>用SpringConfig类代替，需要写@Configuration注解</p>
+<p>配置文件里的扫描&lt;context:component-scan 用@ComponentScan(“com.itheima”)代替 多个用数组形式</p>
+<p>加载配置类初始化容器需要用</p>
+<p>AnnotationConfigApplicationContext(“SpringConfig.class”)</p>
+<p>@PropertySource(“jdbc.properties”)</p>
+<p>加载配置文件</p>
+<p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230704113645539.png" srcset="/img/loading.gif" lazyload alt="image-20230704113645539"><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230704113704623.png" srcset="/img/loading.gif" lazyload alt="image-20230704113704623"></p>
+<h5 id="注解开发的依赖注入"><a href="#注解开发的依赖注入" class="headerlink" title="注解开发的依赖注入"></a>注解开发的依赖注入</h5><p>单例非单例</p>
+<p>@Scope(“”)</p>
+<p>单例 singleton （默认）</p>
+<p>非单例填 prototype</p>
+<p>@PostConstruct</p>
+<p>@PreDestory</p>
+<p>在bookdao上写个@Autowired注解就可以按类型自动注入了</p>
+<p>如果有两个bookdao，可以用@Qualifier(“”)里面填名字来按名注入</p>
+<p><strong>@Autowired</strong></p>
+<p>这个注解是通过暴力反射对对应私有属性注入初始化数据，所以不用提供setter方法</p>
+<p>@value</p>
+<p>对简单类型的注入</p>
+<h5 id="第三方bean管理"><a href="#第三方bean管理" class="headerlink" title="第三方bean管理"></a>第三方bean管理</h5><p>—没听懂</p>
+<p>@Bean写在一个新的JdbcConfig里</p>
+<p>用SpringConfig@Import(JdbcConfig.class)</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/spring/" class="print-no-link">#spring</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Spring</div>
+      <div>https://myblog-20.4everland.app/2023/07/04/Spring/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>QiaoBHNhaokeai</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/04/Annotation/" title="Annotation">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Annotation</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/04/Vue/" title="Vue">
+                        <span class="hidden-mobile">Vue</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'https://myblog-20.4everland.app/2023/07/04/Spring/';
+          this.page.identifier = '/2023/07/04/Spring/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

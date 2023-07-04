@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>fluid_md</title>
+    <link href="/2023/07/04/fluid-md/"/>
+    <url>/2023/07/04/fluid-md/</url>
+    
+    <content type="html"><![CDATA[<h3 id="文章基本操作"><a href="#文章基本操作" class="headerlink" title="文章基本操作"></a>文章基本操作</h3><p>markdown中用三个减号添加头部信息（Front-matter），</p><p>title，tags，date，excerpt</p><p>分别是标题，标签，日期和摘要。</p><p>tags如果想写多个标签，可以用数组的形式 如：[Hexo,Fluid]</p><h3 id="文章其他操作"><a href="#文章其他操作" class="headerlink" title="文章其他操作"></a>文章其他操作</h3><h5 id="hide属性写true可以隐藏文章"><a href="#hide属性写true可以隐藏文章" class="headerlink" title="hide属性写true可以隐藏文章"></a>hide属性写true可以隐藏文章</h5><p>隐藏会使文章在分类和标签类里都不显示</p><p>隐藏后依然可以通过文章链接访问</p><h5 id="文章排序"><a href="#文章排序" class="headerlink" title="文章排序"></a>文章排序</h5><p>如果想把某些文章提前，可以使用sticky属性来设置文章的排序值，数字越大越靠前，sticky不为空的情况下文章的右上角都会有一个置顶的图标。</p><h5 id="文章评论"><a href="#文章评论" class="headerlink" title="文章评论"></a>文章评论</h5><p>已经开启了，但是不科学上网没办法正常使用，后期会改成腾讯云的评论模块。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Fluid</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Annotation</title>
+    <link href="/2023/07/04/Annotation/"/>
+    <url>/2023/07/04/Annotation/</url>
+    
+    <content type="html"><![CDATA[<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p>Override 重写</p><p>Deprecated 不推荐使用的方法，但可以使用。</p><p>SuppressWarning 镇压警告</p><h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><p>用来注解其他注解</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//Target 表示我们的注解可以用在哪些地方</span><br><span class="hljs-meta">@Target(value = &#123;ElementType.METHOD,ElementType.TYPE&#125;)</span><br><br><span class="hljs-comment">//runtime&gt;class&gt;sources</span><br><span class="hljs-meta">@Retention(value = RetentionPlicy.RUNTIME)</span><br><br><span class="hljs-comment">//Documented 表示是否将我们的注解生成在javadoc中</span><br><span class="hljs-meta">@Documented</span><br><br><span class="hljs-comment">//子类可以继承父类的注解</span><br><span class="hljs-meta">@Inherited</span><br><span class="hljs-meta">@interface</span> MyAnnotation<br></code></pre></td></tr></table></figure><p>@interface MyAnnotation</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>annotation</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring</title>
+    <link href="/2023/07/04/Spring/"/>
+    <url>/2023/07/04/Spring/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h3 id="IoC-控制反转"><a href="#IoC-控制反转" class="headerlink" title="IoC 控制反转"></a>IoC 控制反转</h3><p>使用对象时，由主动new产生对象转换为由<strong>外部</strong>提供对象，对象创建控制权由程序转移到<strong>外部</strong>，称为控制反转。</p><p>Spring提供了一个容器称为IoC容器，用来充当IoC思想中的“外部”。</p><p>IoC容器负责对象的创建、初始化等一系列工作，被创建或被管理的对象在IoC容器中统称为<strong>Bean</strong>。</p><p>就是把service 和 dao 放进IoC容器中。</p><p>导入spring坐标：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-context<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.2.10.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure><p>applicationContext.xml配置：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;bookDao&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;BookDaoImp&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;bookService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;BookServiceImp&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure><p>获取IoC容器:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Application</span> <span class="hljs-variable">ctx</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;applicationContext.xml&quot;</span>);<br><span class="hljs-type">BookDao</span> <span class="hljs-variable">bookDao</span> <span class="hljs-operator">=</span> (BookDao) ctx.getBean(<span class="hljs-string">&quot;bookDao&quot;</span>);<br>bookDao.save();<br></code></pre></td></tr></table></figure><h3 id="DI-依赖注入"><a href="#DI-依赖注入" class="headerlink" title="DI 依赖注入"></a>DI 依赖注入</h3><ul><li>使用IoC容器管理Bean（IoC）</li><li>在IoC容器内将有依赖关系的bean进行关系绑定（DI）</li></ul><p>使用对象时不仅可以直接从IoC容器中获取，并且获取到的Bean已经绑定了所有的依赖关系。</p><h3 id="Bean"><a href="#Bean" class="headerlink" title="Bean"></a>Bean</h3><h5 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h5><ul><li><p>id：bean 的id 使用容器可以通过id值获取对应bean，id唯一。</p></li><li><p>class：bean的类型，即bean的全路径类名。</p></li></ul><h5 id="bean的别名"><a href="#bean的别名" class="headerlink" title="bean的别名"></a>bean的别名</h5><p>可以使用空格、分号、逗号分隔。</p><h5 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h5><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629225033660.png" alt="image-20230629225033660"></p><ul><li>构造方法实例化</li><li>使用静态工厂实例化 要用到factory-method 属性</li><li>实例工厂（了解即可）</li><li>FactoryBean实例化</li><li><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629225007526.png" alt="image-20230629225007526"><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230629224911270.png" alt="image-20230629224911270"  /></li></ul><p>applicationContext.xml 里的bean配置</p><h5 id="生命周期控制"><a href="#生命周期控制" class="headerlink" title="生命周期控制"></a>生命周期控制</h5><ul><li><p>在bean配置里init-method和destory-method</p></li><li><p>实现InitializingBean 和 DisposableBean两个接口中的 afterPropertiesSet方法和destory方法</p></li></ul><h6 id="初始化容器"><a href="#初始化容器" class="headerlink" title="初始化容器"></a>初始化容器</h6><ol><li>创建对象（内存分配）</li><li>执行构造方法</li><li>执行属性注入（set操作）</li><li>执行bean初始化方法</li></ol><h6 id="使用bean"><a href="#使用bean" class="headerlink" title="使用bean"></a>使用bean</h6><ol><li>执行业务操作</li></ol><h6 id="关闭-x2F-销毁容器"><a href="#关闭-x2F-销毁容器" class="headerlink" title="关闭&#x2F;销毁容器"></a>关闭&#x2F;销毁容器</h6><ol><li>执行bean销毁方法</li></ol><p>——关于bean的销毁时机</p><p>关闭容器的方式：</p><ul><li>手工关闭容器</li><li>注册关闭钩子</li></ul><p>ConfigurableApplicationContext接口的close()操作</p><p>ConfigurableApplicationContext接口registerShutdownHook()操作</p><h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132410644.png" alt="image-20230630132410644"></p><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132330378.png" alt="image-20230630132330378"></p><p>以上是引用</p><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132439934.png" alt="image-20230630132439934"></p><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630132459552.png" alt="image-20230630132459552"></p><p>基本类型</p><p>构造方法</p><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630134317205.png" alt="image-20230630134317205"></p><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630134407423.png" alt="image-20230630134407423"></p><p>构造方法 基本类型</p><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230630134527787.png" alt="image-20230630134527787"></p><h6 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h6><p>bean标签里 加autowire属性</p><p>byType 按类型 ：要求bean唯一</p><p>byName 按名称 ： 必须有指定名称的bean，变量名耦合，不推荐</p><p>自动装配优先级最低</p><h3 id="注解开发"><a href="#注解开发" class="headerlink" title="注解开发"></a>注解开发</h3><h5 id="bean-注解-component"><a href="#bean-注解-component" class="headerlink" title="bean 注解 @component"></a>bean 注解 @component</h5><ul><li><strong>@Controller</strong></li><li><strong>@Service</strong> service</li><li><strong>@Repository</strong> dao</li></ul><h5 id="java类代替核心配置文件（ApplicationContext）"><a href="#java类代替核心配置文件（ApplicationContext）" class="headerlink" title="java类代替核心配置文件（ApplicationContext）"></a>java类代替核心配置文件（ApplicationContext）</h5><p>用SpringConfig类代替，需要写@Configuration注解</p><p>配置文件里的扫描&lt;context:component-scan 用@ComponentScan(“com.itheima”)代替 多个用数组形式</p><p>加载配置类初始化容器需要用</p><p>AnnotationConfigApplicationContext(“SpringConfig.class”)</p><p>@PropertySource(“jdbc.properties”)</p><p>加载配置文件</p><p><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230704113645539.png" alt="image-20230704113645539"><img src="C:\Users\QiaoBHNhaokeai\AppData\Roaming\Typora\typora-user-images\image-20230704113704623.png" alt="image-20230704113704623"></p><h5 id="注解开发的依赖注入"><a href="#注解开发的依赖注入" class="headerlink" title="注解开发的依赖注入"></a>注解开发的依赖注入</h5><p>单例非单例</p><p>@Scope(“”)</p><p>单例 singleton （默认）</p><p>非单例填 prototype</p><p>@PostConstruct</p><p>@PreDestory</p><p>在bookdao上写个@Autowired注解就可以按类型自动注入了</p><p>如果有两个bookdao，可以用@Qualifier(“”)里面填名字来按名注入</p><p><strong>@Autowired</strong></p><p>这个注解是通过暴力反射对对应私有属性注入初始化数据，所以不用提供setter方法</p><p>@value</p><p>对简单类型的注入</p><h5 id="第三方bean管理"><a href="#第三方bean管理" class="headerlink" title="第三方bean管理"></a>第三方bean管理</h5><p>—没听懂</p><p>@Bean写在一个新的JdbcConfig里</p><p>用SpringConfig@Import(JdbcConfig.class)</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>spring</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vue</title>
+    <link href="/2023/07/04/Vue/"/>
+    <url>/2023/07/04/Vue/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h2><h6 id="设置标签的文本值（textContent）"><a href="#设置标签的文本值（textContent）" class="headerlink" title="设置标签的文本值（textContent）"></a>设置标签的文本值（textContent）</h6><p>在h2标签里添加  v-text &#x3D; “message”  就会绑定到vue里的message的值</p><p>使用 <strong>代码行1</strong> 也是同样的效果</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span> &#123;&#123;message&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br></code></pre></td></tr></table></figure><h2 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h2><h6 id="设置标签的innerHTML"><a href="#设置标签的innerHTML" class="headerlink" title="设置标签的innerHTML"></a>设置标签的innerHTML</h6><p>就是可以添加html标签的一个vue标签，例如</p><p>message值为 :</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;#&#x27;</span>&gt;</span> 这是一条message数据 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure><h2 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h2><h6 id="为元素绑定事件"><a href="#为元素绑定事件" class="headerlink" title="为元素绑定事件"></a>为元素绑定事件</h6><p>v-on后可以写：click、mouseenter、dbclick等</p><p>绑定的事件写在vue实例中的methods里</p><h6 id="v-on-方法名可以省略为-方法名"><a href="#v-on-方法名可以省略为-方法名" class="headerlink" title="v-on:+方法名可以省略为@+方法名"></a>v-on:+方法名可以省略为@+方法名</h6><h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><h6 id="根据表达式的真假，切换元素的显示和隐藏"><a href="#根据表达式的真假，切换元素的显示和隐藏" class="headerlink" title="根据表达式的真假，切换元素的显示和隐藏"></a>根据表达式的真假，切换元素的显示和隐藏</h6><p>v-show：表达式</p><h6 id="methods方法里可以用this-data-去获取到vue实例中的data值"><a href="#methods方法里可以用this-data-去获取到vue实例中的data值" class="headerlink" title="methods方法里可以用this.data 去获取到vue实例中的data值"></a>methods方法里可以用this.data 去获取到vue实例中的data值</h6><h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h2><h6 id="根据表达式的真假，切换元素的显示和隐藏。同样可以使用data值去做为表达式"><a href="#根据表达式的真假，切换元素的显示和隐藏。同样可以使用data值去做为表达式" class="headerlink" title="根据表达式的真假，切换元素的显示和隐藏。同样可以使用data值去做为表达式"></a>根据表达式的真假，切换元素的显示和隐藏。同样可以使用data值去做为表达式</h6><h6 id="v-show-是隐藏和显示，v-if是添加和删除"><a href="#v-show-是隐藏和显示，v-if是添加和删除" class="headerlink" title="v-show 是隐藏和显示，v-if是添加和删除"></a>v-show 是隐藏和显示，v-if是添加和删除</h6><h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><h6 id="v-bind可以绑定元素的属性"><a href="#v-bind可以绑定元素的属性" class="headerlink" title="v-bind可以绑定元素的属性"></a>v-bind可以绑定元素的属性</h6><p>例如：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-bind:src</span>=<span class="hljs-string">&quot;imgSrc&quot;</span>&gt;</span><br><br>var app = new Vue(&#123;<br>el:&quot;#app&quot;,<br>data:&#123;<br>imgSrc:&quot;图片的路径&quot;,<br>&#125;<br>&#125;)<br></code></pre></td></tr></table></figure><p>这样就可以操作图片的切换了，可以用在轮播图上。</p><h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><h6 id="根据数据生成列表结构"><a href="#根据数据生成列表结构" class="headerlink" title="根据数据生成列表结构"></a>根据数据生成列表结构</h6><p>会把v-for里的所有结构都重复生成，例如：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item,index) in arr&quot;</span>&gt;</span><br>        &#123;&#123;index&#125;&#125;&#123;&#123;item.name&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>var app = new Vue(&#123;<br>el:&quot;#app&quot;,<br>data:&#123;<br>arr:[1,2,3,4,5],<br>objArr:[<br>&#123;name :&quot;jack&quot;&#125;,<br>&#123;name :&quot;rose&quot;&#125;<br>]<br>&#125;<br>&#125;)<br></code></pre></td></tr></table></figure><p>push方法可以在数组中追加一条数据，例如：</p><p>this.vegetables.push({name:”花菜炒蛋“});</p><p>shift()方法可以删除一条最左边的数据。</p><h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><h6 id="用来获取和设置表单元素的值（双向绑定）"><a href="#用来获取和设置表单元素的值（双向绑定）" class="headerlink" title="用来获取和设置表单元素的值（双向绑定）"></a>用来获取和设置表单元素的值（双向绑定）</h6><p>一般用来绑定input text和data中的数据。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>git_code</title>
+    <link href="/2023/07/04/git%20clone%20https/"/>
+    <url>/2023/07/04/git%20clone%20https/</url>
+    
+    <content type="html"><![CDATA[<p>git clone https</p><p>git add .</p><p>git commit -m “介绍”</p><p>git push</p><p>git pull</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>test</title>
+    <link href="/2023/07/04/test/"/>
+    <url>/2023/07/04/test/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
